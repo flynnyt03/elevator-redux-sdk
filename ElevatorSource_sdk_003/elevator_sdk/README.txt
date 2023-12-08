@@ -8,5 +8,3 @@ of elevator_redux_beta
 
 Thank you to:
 pixelTail Games
-
-Copyright 2011-2012 pixelTail Games
