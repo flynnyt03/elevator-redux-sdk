@@ -1,0 +1,75 @@
+//====== Copyright � 2011-2012, pixelTail Games =======
+//
+// Purpose: General game definition file (.fgd)
+//
+//=============================================================================
+
+@include "base.fgd"
+@include "halflife2.fgd"
+
+
+@SolidClass base( Targetname, Origin ) = trigger_elevator :
+"A trigger volume that moves players into the elevator/starts the elevator game."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) iconsprite("editor/info_target.vmt") = info_elevator_floor : 
+"The information behind an elevator floor stop. This must be placed in the exact same location as all other floors."
+[
+	relayStart(target_destination) : "Start Floor Relay" : "" : "Fired when the elevator floor starts."
+	relayEnd(target_destination) : "End Floor Relay" : "" : "Fired when the elevator floor ends."
+
+	// Inputs
+	input end(void) : "Ends this floor."
+]
+
+@PointClass base( Targetname, Origin, Angles ) = logic_togglelua : 
+"This toggles different Lua-based effects off and on."
+[
+	// Inputs
+	input SleepOn(void) : "Turns on sleep time (disables legs and names)."
+	input SleepOff(void) : "Turns off sleep time (enables legs and names)."
+	input SpaceOn(void) : "Call when the space door is opened."
+	input SpaceOff(void) : "Call when the space door is closed."
+]
+
+@SolidClass base( Targetname, Origin ) = trigger_nogravity :
+"A trigger volume that disables gravity on physics objects that touch it."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/billiards/table_10ft.mdl") = elevator_billiards :
+"The classic billiards table."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/sunabouzu/fancy_blender.mdl") = elevator_blender :
+"Blender mom is going to get you."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/sunabouzu/fruit/apple.mdl") = elevator_ingredient :
+"Spawns a random ingredient to blend."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/gmod_tower/casino/slotmachine.mdl") = slotmachine :
+"A casino slot machine for all to enjoy."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/gmod_tower/suitetv.mdl") = elevator_mediatv :
+"Youtube enabled TV that syncs."
+[
+]
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/hunter/plates/plate8x16.mdl") = elevator_media_cinema :
+"Youtube enabled cinema screen that syncs."
+[
+]
+
+
+@PointClass base( Targetname, Origin, Angles ) studio("models/sunabouzu/creep_hand.mdl") = creep_hand :
+"Creep hand."
+[
+]
